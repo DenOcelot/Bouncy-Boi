@@ -10,6 +10,9 @@ public class FollowCamera : MonoBehaviour
     public float speed = 2;
     public float size = 20;
     public float min_dist = 0.5f;
+    public bool CamMov = true;
+
+    Vector2 dir;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -20,7 +23,15 @@ public class FollowCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 dir = target.position - transform.position;
+        if (CamMov)
+        {
+            dir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        }
+        else
+        {
+            dir = new Vector2(transform.position.x, transform.position.y);
+        }
+
         dir += offset;
         if (dir.sqrMagnitude > min_dist * min_dist)
         {

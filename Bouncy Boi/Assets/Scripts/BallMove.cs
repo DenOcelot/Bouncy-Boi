@@ -39,6 +39,17 @@ public class BallMove : MonoBehaviour
         {
             Strech.enabled = false;
         }
+        if (anim.GetBool("is jump") && anim.GetBool("is land") && !anim.GetBool("is fall"))
+        {
+
+            anim.SetBool("is jump", true);
+            anim.SetBool("is fall", true);
+            anim.SetBool("is land", false);
+        }
+        if (anim.GetBool("is fall") && !anim.GetBool("is land"))
+        {
+            anim.SetBool("is jump", true);
+        }
     }
 
     void FixedUpdate()
@@ -59,22 +70,33 @@ public class BallMove : MonoBehaviour
         {
             anim.SetBool("is land", true);
             anim.SetBool("is jump", true);
-            anim.SetBool("is fall", false);
+            anim.SetBool("is fall", true);
         }
-        if (collision.gameObject.tag.Substring(1,4) == "Jump" )
+        else
         {
-            anim.SetBool("is doubleJump", true);
-            Invoke("doubleJumpEnd", float.Parse(collision.gameObject.tag.Substring(0, 1)) * 0.6f);
+            anim.SetBool("is jump", true);
+            anim.SetBool("is land", false);
+        }
+        if (anim.GetBool("is fall") && anim.GetBool("is jump") && !anim.GetBool("is land"))
+        {
+            anim.SetBool("is land", true);
         }
     }
     void OnCollisionExit2D(Collision2D collision)
     {
+        if (collision.gameObject.tag.Substring(1, 4) == "Jump")
+        {
+            anim.SetBool("is fall", false);
+            anim.SetBool("is land", true);
+            anim.SetBool("is jump", true);
+            anim.SetBool("is doubleJump", true);
+            Invoke("doubleJumpEnd", float.Parse(collision.gameObject.tag.Substring(0, 1)) * 0.6f);
+        }
         anim.SetBool("is land", false);
         anim.SetBool("is jump", false);
-        if (!anim.GetBool("is doubleJump") && !anim.GetBool("is fall"))
+        if(!anim.GetBool("is doubleJump"))
         {
             anim.SetBool("is fall", true);
         }
-        
     }
 }
