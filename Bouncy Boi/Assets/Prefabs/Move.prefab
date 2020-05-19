@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3447458597368991620}
   - component: {fileID: 2283354407784139215}
   - component: {fileID: 2283354407784139200}
+  - component: {fileID: 705742437}
   m_Layer: 0
   m_Name: Move
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ae2630d0148fea940b639128459f9d91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcbd5708ef15c204ba3d3b671150d953, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +122,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100000
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -129,7 +130,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!257 &2283354407784139200
 TargetJoint2D:
   m_ObjectHideFlags: 0
@@ -146,9 +147,28 @@ TargetJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_Target: {x: -6, y: 3.76}
   m_AutoConfigureTarget: 0
-  m_MaxForce: 100000
+  m_MaxForce: 1000000
   m_DampingRatio: 1
-  m_Frequency: 10
+  m_Frequency: 0.5
+--- !u!95 &705742437
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447458597368991621}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f19ec07e9aa682443ab3fefdf618f843, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7779266951332278771
 GameObject:
   m_ObjectHideFlags: 0

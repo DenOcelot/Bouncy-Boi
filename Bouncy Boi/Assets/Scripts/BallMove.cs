@@ -6,13 +6,10 @@ public class BallMove : MonoBehaviour
 {
     public float speed;
     public bool canMove = true;
-    public bool fall;
 
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     private Animator anim;
-    [SerializeField]
-    private CapsuleCollider2D Strech;
 
     Timer timer;
     // Start is called before the first frame update
@@ -30,14 +27,6 @@ public class BallMove : MonoBehaviour
         {
             Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), 0);
             moveVelocity = moveInput * speed;
-        }
-        if (fall)
-        {
-            Strech.enabled = true;
-        }
-        else
-        {
-            Strech.enabled = false;
         }
         if (anim.GetBool("is jump") && anim.GetBool("is land") && !anim.GetBool("is fall"))
         {
@@ -74,7 +63,6 @@ public class BallMove : MonoBehaviour
         }
         else
         {
-            anim.SetBool("is jump", true);
             anim.SetBool("is land", false);
         }
         if (anim.GetBool("is fall") && anim.GetBool("is jump") && !anim.GetBool("is land"))
