@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DoubleJump
   - 2Jump
+  - Death
   layers:
   - Default
   - TransparentFX

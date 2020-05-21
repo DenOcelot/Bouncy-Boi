@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallMove : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BallMove : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     private Animator anim;
+    public ParticleSystem Death;
 
     Timer timer;
     // Start is called before the first frame update
@@ -52,6 +54,11 @@ public class BallMove : MonoBehaviour
         anim.SetBool("is fall", true);
     }
 
+    void die()
+    {
+        Destroy(gameObject);
+        SceneManager.LoadScene("Game");
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -68,6 +75,11 @@ public class BallMove : MonoBehaviour
         if (anim.GetBool("is fall") && anim.GetBool("is jump") && !anim.GetBool("is land"))
         {
             anim.SetBool("is land", true);
+        }
+        if (collision.gameObject.tag == "Death")
+        {
+            Death.Play();
+            Invoke("die", 0.5f);
         }
     }
     void OnCollisionExit2D(Collision2D collision)
