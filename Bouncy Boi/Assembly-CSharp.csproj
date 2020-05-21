@@ -63,9 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallMove.cs" />
-    <Compile Include="Assets\Scripts\Dagger.cs" />
     <Compile Include="Assets\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
+    <Compile Include="Assets\Scripts\MovingPlatform.cs" />
+    <Compile Include="Assets\Scripts\Threat.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Gits/BouncyBoi/Bouncy Boi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
