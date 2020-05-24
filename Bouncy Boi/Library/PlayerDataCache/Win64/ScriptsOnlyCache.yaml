@@ -11,10 +11,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -55,15 +53,15 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9548}
+      Script: {instanceID: 9246}
     - Class: 114
-      Script: {instanceID: 9944}
+      Script: {instanceID: 9308}
     - Class: 114
-      Script: {instanceID: 10478}
+      Script: {instanceID: 9552}
     - Class: 114
-      Script: {instanceID: 11806}
+      Script: {instanceID: 9948}
     - Class: 114
-      Script: {instanceID: 12822}
+      Script: {instanceID: 10482}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -99,6 +97,12 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 4d8484581ee6d888a6b24dbd0fd4c75a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Threat
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -115,6 +119,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 37c99f54db370c4195636aebc1936dd5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MovingPlatform
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -739,19 +749,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 4d8484581ee6d888a6b24dbd0fd4c75a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Threat
-  - hash:
-      serializedVersion: 2
-      Hash: 4d8484581ee6d888a6b24dbd0fd4c75a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MovingPlatform
   platform: 19
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: D:/Gits/BouncyBoi/Bouncy Boi/Build/Bouncy Boi.exe
+  playerPath: D:/Gits/BouncyBoi/Build/Bouncy Boi.exe

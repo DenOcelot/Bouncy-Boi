@@ -222,11 +222,11 @@ TargetJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_Anchor: {x: 0, y: 0}
-  m_Target: {x: -5.99, y: 3.77}
+  m_Target: {x: 0, y: 0}
   m_AutoConfigureTarget: 0
-  m_MaxForce: 100000
+  m_MaxForce: 10
   m_DampingRatio: 1
-  m_Frequency: 5
+  m_Frequency: 1
 --- !u!114 &7828923051503572758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742a6ae135cea6c4698c6fee36d40716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Joint: {fileID: 7828923051503572757}
+  Joint: {fileID: 0}
   Target1: {x: 0, y: 0}
-  Target2: {x: -3.78, y: 0}
+  Target2: {x: 0, y: 0}

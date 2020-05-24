@@ -31,37 +31,36 @@ public class LevelGenerator : MonoBehaviour
             TileSetLength = Random.Range(MinTileSetLength, MaxTileSetLength);
             int s = 0;
             float SetDistanceX = Random.Range(MinTileSetDistance, MaxTileSetDistance);
-            float SetDistanceY = Random.Range(-MaxTileSetDistance, MaxTileSetDistance);
+            float SetDistanceY = Random.Range(-MaxTileSetDistance* 1.3f, MaxTileSetDistance);
             GameObject CurrentTile = tiles[0];
             tileSelect = Random.Range(0, tiles.Length * 4);
             if (tileSelect == 0)
             {
-                CurrentTile = tiles[1];
+                CurrentTile = tiles[tileSelect+1];
                 SetDistanceY = Random.Range(MaxTileSetDistance*1.5f, MaxTileSetDistance*1.9f);
             }
-            else if (tileSelect == 1111)
+            else if (tileSelect == 1)
             {
-                CurrentTile = tiles[2];
+                CurrentTile = tiles[tileSelect + 1];
                 SetDistanceX = Random.Range(MaxTileSetDistance * 1.5f, MaxTileSetDistance * 1.9f);
                 TileSetLength = 0;
             }
             while (s <= TileSetLength)
             {
                 TileTransform = new Vector3(PreviousTileTransform.x + 0.8f, PreviousTileTransform.y);
-                if (s == TileSetLength)
+                if (TileSetLength == 0)
                 {
+                    if (tileSelect == 1)
+                    {
+                        Vector3 PlatTransform = new Vector3(PreviousTileTransform.x + MaxTileSetDistance * 1.9f, PreviousTileTransform.y);
+                        GameObject movingPlatform = Instantiate(CurrentTile, PlatTransform, Quaternion.identity);
+                    }
                     tileSelect = Random.Range(0, tiles.Length * 4);
-                    if (tileSelect == 0)
+                    if (tileSelect == 0 && i != 0|| tileSelect >= 5 && i != 0)
                     {
                         GameObject Enemy = Instantiate(Enemies[0], ThreatTarget, Quaternion.identity);
                         ThreatTarget = new Vector3(TileTransform.x, TileTransform.y + 3.5f);
                         Enemy.GetComponent<Threat>().Target2 = ThreatTarget;
-                    }
-                    if (tileSelect == 1111)
-                    {
-                        TileTransform = new Vector3(PreviousTileTransform.x + SetDistanceX, PreviousTileTransform.y);
-                        GameObject TrackPlatform = Instantiate(CurrentTile, TileTransform, Quaternion.identity);
-                        TrackPlatform.GetComponent<MovingPlatform>().Target2 = new Vector2(TileTransform.x - 2.03f, TileTransform.y);
                     }
                 }
                 tileSelect = Random.Range(0, tiles.Length * 4);               
